@@ -1,0 +1,186 @@
+@font-face {
+	font-family: 'Wingdings';
+	src: url('/assets/font/wingdings.woff2') format('woff2'), url('/assets/font/wingdings.woff') format('woff'), url('/assets/font/wingdings.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+html {
+	background-color: #fff;
+	color: #000;
+	height: 100%;
+	overflow-x: hidden;
+}
+body, button {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: calc(var(--fs) * 5.5);
+	line-height: 1em;
+}
+main {
+	width: 100%;
+	height: 100%;
+}
+button {
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+}
+a, button {
+	color: blue;
+}
+a:hover, button:hover, button:hover:after {
+	text-decoration: underline;
+}
+::selection {
+	background-color: #010101;
+	color: #fff;
+}
+.hidden {
+	display: none !important;
+}
+nav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 999;
+}
+nav button {
+	padding: 0 calc(var(--fs) * 1.5) var(--fs);
+}
+@media (min-aspect-ratio: 1/1) {
+	nav {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	nav .play {
+		width: 25%;
+	}
+}
+nav .play #replay {
+	display: none;
+}
+body.playing #play {
+	font-size: 0;
+}
+body.playing #play:after {
+	content: 'Pause';
+	font-size: calc(var(--fs) * 5.5);
+	line-height: 1em;
+}
+body.playing #play:hover {
+	text-decoration: none;
+}
+@keyframes blinker {
+	0% {
+		text-decoration: none;
+	}
+	50% {
+		text-decoration: underline;
+	}
+	100% {
+		text-decoration: none;
+	}
+}
+body:not(.playing) #play {
+	animation: blinker 1s linear infinite;
+}
+#p5_loading {
+	line-height: 1.2em;
+	font-size: 4vw;
+	padding: 1.5vw;
+}
+@media (max-aspect-ratio: 1/1) {
+	#p5_loading {
+		font-size: 4vh;
+		padding: 1.5vh;
+	}
+}
+#p5_loading:after {
+	content: 'Loading...';
+}
+#container {
+	display: none;
+}
+#intro, #container, #about {
+	line-height: 1.05em;
+}
+#intro span, #intro font, #container span, #container font, #about span, #about font {
+	display: inline-block;
+	vertical-align: middle;
+}
+#intro span, #container span, #about span {
+	line-height: 1.05em;
+}
+#intro font, #container font, #about font {
+	padding: 0em 0.14em 0.14em;
+}
+#intro[borders="0"] span, #container[borders="0"] span, #about[borders="0"] span {
+	padding: 0em 0.14em;
+}
+#intro[borders="0"] span font, #container[borders="0"] span font, #about[borders="0"] span font {
+	padding: 0 0 0.14em;
+}
+#intro {
+	padding: calc(var(--fs) * 0.75);
+}
+#about {
+	font-size: 67%;
+	line-height: 1.2em;
+	padding: var(--fs) calc(var(--fs) * 1.5) 200px;
+}
+#about p {
+	margin: 0 -0.14em 0.4em;
+}
+#about .key {
+	border: 0.045em solid #000;
+	margin: -0.045em;
+	padding: 0.02em 0.065em 0 0.055em;
+	vertical-align: baseline;
+}
+#about #close-about {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: var(--fs) calc(var(--fs) * 1.5);
+}
+body:not(.about-visible) #about {
+	display: none;
+}
+body.about-visible #intro, body.about-visible #container, body.about-visible nav, body.about-visible #progress {
+	display: none !important;
+}
+#progress {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	pointer-events: none;
+}
+#progress span {
+	display: block;
+	height: 100%;
+	box-shadow: -2vw 0 0 0 red inset;
+	width: 0;
+}
+@media (max-aspect-ratio: 1/1) {
+	#progress span {
+		box-shadow: -1vw 0 0 0 red inset;
+	}
+}
+body:not(.started) #progress, body.playing.no-move #progress {
+	display: none;
+}
+body.playing.no-move {
+	cursor: none;
+}
+body.playing.no-move nav {
+	display: none;
+}
+body:not(.loaded) nav, body:not(.loaded) main, body:not(.loaded) #intro {
+	display: none;
+}
