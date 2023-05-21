@@ -1,0 +1,641 @@
+main {
+	display: table;
+	position: relative;
+	background-color: white;
+}
+.selected {
+	background-color: black;
+}
+body.started #intro {
+	display: none;
+}
+body.started #container {
+	display: block;
+	min-height: 100vh;
+}
+body.started #container[scene="15"] p, body.started #container[scene="16"] p, body.started #container[scene="17"] p, body.started #container[scene="18"] p, body.started #container[scene="19"] p, body.started #container[scene="20"] p, body.started #container[scene="21"] p, body.started #container[scene="22"] p, body.started #container[scene="23"] p, body.started #container[scene="24"] p {
+	display: inline;
+}
+body.started #container[scene="1"] {
+	display: table-cell;
+	vertical-align: top;
+	padding: calc(var(--fs) * 0.75);
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[scene="1"] br {
+		display: none;
+	}
+}
+body.started #container[scene="2"] {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+body.started #container[scene="3"] {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 230%;
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[scene="3"] {
+		font-size: 150%;
+	}
+}
+body.started #container[scene="4"], body.started #container[scene="5"] {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0 calc(var(--fs) * 4);
+}
+body.started #container[scene="6"] {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 50%;
+}
+body.started #container[scene="6"] p {
+	margin: 0 auto;
+}
+body.started #container[scene="6"] font {
+	min-width: 0;
+	transition: min-width 0.15s ease;
+}
+body.started #container[scene="6"] [glitch="3"] {
+	color: blue !important;
+}
+body.started #container[scene="6"] [glitch="3"], body.started #container[scene="6"] [glitch="3"] * {
+	text-decoration: underline !important;
+}
+body.started #container[scene="7"] {
+	font-size: 25%;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+}
+body.started #container[scene="7"] p {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: grid;
+	width: fit-content;
+	margin: 0 auto;
+	grid-template-columns: repeat(7,fit-content(1));
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[scene="7"] p {
+		grid-template-columns: repeat(5,fit-content(1));
+	}
+}
+body.started #container[scene="7"] p span {
+	color: black;
+	padding: 0;
+	border: 0.14vw solid black;
+	margin: calc(var(--fs) * -0.07);
+}
+body.started #container[scene="7"] p span font {
+	min-width: 0;
+	min-height: 0;
+	white-space: nowrap;
+	transition: min-width 60ms ease, min-height 60ms ease;
+}
+body.started #container[scene="7"] p span font {
+	background: transparent !important;
+}
+body.started #container[scene="7"] p span.selected {
+	background-color: blue !important;
+	color: white !important;
+}
+body.started #container[scene="7"] [glitch="2"] {
+	background-color: yellow !important;
+	color: blue !important;
+}
+body.started #container[scene="7"] [glitch="3"] {
+	color: white !important;
+}
+body.started #container[scene="7"] [decor="6"] {
+	color: blue !important;
+}
+body.started #container[scene="8"] {
+	color: black;
+	font-size: 800%;
+	padding: 22vh 0 22vh;
+	text-align: left;
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[scene="8"] {
+		font-size: 400%;
+	}
+}
+body.started #container[scene="8"] span {
+	padding: 0 0.2em 0 0.03em;
+}
+body.started #container[scene="8"] font {
+	display: inline-block;
+	line-height: 0.75em;
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[scene="8"] font {
+		line-height: 1.2em;
+	}
+}
+body.started #container[scene="8"] font.selected {
+	background-color: blue;
+	color: white;
+}
+body.started #container[scene="9"] {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: var(--fs);
+	font-size: 180%;
+	width: 100vw;
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[scene="9"] {
+		font-size: 140%;
+	}
+}
+body.started #container[scene="10"] {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	font-size: 50%;
+	width: 100vw;
+	transition: width 0.2s ease;
+}
+body.started #container[scene="10"] [glitch="4"] {
+	background-color: white !important;
+	color: black !important;
+	font-family: "Wingdings", serif;
+}
+body.started #container[scene="11"] {
+	padding: 0;
+	font-size: 80%;
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+}
+body.started #container[scene="11"] p {
+	width: 0;
+	min-width: 25%;
+	transition: width 0.12s ease;
+}
+body.started #container[scene="11"] .selected {
+	color: black !important;
+}
+body.started #container[scene="12"] {
+	font-size: 50%;
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	padding: 0;
+}
+body.started #container[scene="12"] p {
+	min-width: 20%;
+	width: 50vw;
+	text-align: left;
+	padding: 0.14em 2vw 0.14em 0;
+	transition: width 0.12s ease;
+}
+body.started #container[scene="12"] p span {
+	line-height: 0.8em;
+}
+body.started #container[scene="12"] p.selected {
+	background-color: black !important;
+	color: white;
+}
+body.started #container[scene="13"] {
+	display: block;
+	font-size: 33.333%;
+	text-align: left;
+}
+body.started #container[scene="13"] p {
+	display: inline;
+}
+body.started #container[scene="13"] span {
+	padding: 0;
+}
+body.started #container[scene="13"] span font:last-child {
+	min-width: calc(var(--fs) * 3);
+}
+body.started #container[scene="13"] font {
+	padding: 0.12em 0 0.22em;
+	display: inline-block;
+	color: black;
+	min-width: calc(var(--fs) * 1.5);
+	transition: min-width 0.15s ease;
+}
+body.started #container[scene="13"] .selected font {
+	background-color: black !important;
+	color: white !important;
+}
+body.started #container[scene="14"] {
+	font-size: 8.3vw !important;
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[scene="14"] {
+		font-size: 14vw !important;
+	}
+}
+body.started #container[scene="15"] {
+	transition: font-size 6s ease;
+}
+body.started #container[scene="15"] span {
+	padding: 0;
+}
+body.started #container[scene="15"] span font {
+	padding: 0 0.14em 0.14em;
+}
+body.started #container[scene="15"] .selected {
+	background-color: black;
+}
+body.started #container[scene="16"], body.started #container[scene="17"] {
+	font-size: calc(var(--fs) * 1.6);
+}
+body.started #container[scene="16"] {
+	color: black;
+}
+body.started #container[scene="16"] [glitch="2"] {
+	background-color: red !important;
+	color: black !important;
+}
+body.started #container[scene="16"] [glitch="3"] {
+	color: white !important;
+}
+body.started #container[scene="16"] [glitch="4"] {
+	color: black !important;
+}
+body.started #container[scene="17"] {
+	color: #222;
+}
+body.started #container[scene="17"] .selected {
+	background-color: transparent !important;
+	color: white !important;
+}
+body.started #container[scene="17"] .selected font {
+	color: white !important;
+}
+body.started #container[scene="18"] {
+	height: 100%;
+	font-size: calc(var(--fs) * 1.27);
+}
+body.started #container[scene="18"] [glitch="2"] {
+	background-color: yellow !important;
+	color: blue !important;
+}
+body.started #container[scene="18"] font {
+	min-width: 0;
+}
+body.started #container[scene="19"], body.started #container[scene="20"] {
+	display: block;
+	font-size: calc(var(--fs) * 1.27);
+	height: 100%;
+}
+body.started #container[scene="19"] span, body.started #container[scene="20"] span {
+	display: inline-block;
+	padding: 0;
+}
+body.started #container[scene="19"] span font, body.started #container[scene="20"] span font {
+	padding: 0 0.14em 0.14em;
+}
+body.started #container[scene="19"] .selected, body.started #container[scene="20"] .selected {
+	color: blue;
+}
+body.started #container[scene="19"] [glitch="2"], body.started #container[scene="20"] [glitch="2"] {
+	background-color: yellow !important;
+	color: blue !important;
+}
+body.started #container[scene="19"] [glitch="3"], body.started #container[scene="20"] [glitch="3"] {
+	color: white !important;
+}
+body.started #container[scene="19"] font {
+	min-width: 0;
+	transition: min-width 2s ease;
+}
+body.started #container[scene="20"] {
+	background-color: black;
+}
+body.started #container[scene="20"] span {
+	min-width: calc(var(--fs) * 8);
+}
+body.started #container[scene="20"] font {
+	min-width: 0;
+	transition: min-width 100ms ease;
+}
+body.started #container[scene="21"], body.started #container[scene="22"], body.started #container[scene="23"], body.started #container[scene="24"] {
+	background-color: black;
+	font-size: calc(var(--fs) * 1.27);
+	display: block;
+}
+body.started #container[scene="21"] span, body.started #container[scene="22"] span, body.started #container[scene="23"] span, body.started #container[scene="24"] span {
+	padding: 0;
+}
+body.started #container[scene="21"] span font, body.started #container[scene="22"] span font, body.started #container[scene="23"] span font, body.started #container[scene="24"] span font {
+	padding: 0.1em 0.2em 0.2em;
+}
+body.started #container[scene="21"] [glitch]:not([glitch="0"]) font, body.started #container[scene="22"] [glitch]:not([glitch="0"]) font, body.started #container[scene="23"] [glitch]:not([glitch="0"]) font, body.started #container[scene="24"] [glitch]:not([glitch="0"]) font {
+	background-color: transparent !important;
+}
+body.started #container[scene="21"] [glitch="1"], body.started #container[scene="22"] [glitch="1"], body.started #container[scene="23"] [glitch="1"], body.started #container[scene="24"] [glitch="1"] {
+	background-color: yellow !important;
+}
+body.started #container[scene="21"] [glitch="1"] font, body.started #container[scene="22"] [glitch="1"] font, body.started #container[scene="23"] [glitch="1"] font, body.started #container[scene="24"] [glitch="1"] font {
+	color: blue !important;
+}
+body.started #container[scene="21"] [glitch="2"] font, body.started #container[scene="22"] [glitch="2"] font, body.started #container[scene="23"] [glitch="2"] font, body.started #container[scene="24"] [glitch="2"] font {
+	color: white !important;
+}
+body.started #container[scene="21"] [glitch="3"] font, body.started #container[scene="22"] [glitch="3"] font, body.started #container[scene="23"] [glitch="3"] font, body.started #container[scene="24"] [glitch="3"] font {
+	color: white !important;
+}
+body.started #container[scene="21"] [glitch="4"] font, body.started #container[scene="22"] [glitch="4"] font, body.started #container[scene="23"] [glitch="4"] font, body.started #container[scene="24"] [glitch="4"] font {
+	color: black !important;
+}
+body.started #container[scene="22"], body.started #container[scene="23"], body.started #container[scene="24"], body.started #container[scene="25"] {
+	font-size: calc(var(--fs) * 1.27);
+}
+body.started #container[scene="23"] span, body.started #container[scene="24"] span {
+	padding: 0;
+}
+body.started #container[scene="23"] span font, body.started #container[scene="24"] span font {
+	padding: 0.1em 0.2em 0.2em;
+}
+body.started #container[scene="24"] .selected {
+	color: white !important;
+	background-color: transparent !important;
+}
+body.started #container[scene="25"] {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+body.started #container[scene="25"] p {
+	display: inline;
+}
+body.started #container[scene="26"] {
+	padding: calc(var(--fs) * 0.75);
+}
+body.started #container[layout="1"] {
+	text-transform: uppercase;
+}
+body.started #container[layout="1"] p {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+body.started #container[layout="2"] p {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+body.started #container[layout="1"] font, body.started #container[layout="2"] font {
+	padding: 0.05em !important;
+}
+body.started #container[layout="3"] p {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+body.started #container[layout="3"] p span {
+	margin: 0 0.15em;
+}
+body.started #container[layout="4"] p {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	background-color: white;
+}
+body.started #container[layout="4"] p span {
+	padding: 0 0.1em 0 0;
+}
+body.started #container[layout="4"] p span font {
+	background-color: #ddd;
+}
+body.started #container[layout="5"] span {
+	background-color: white;
+	color: black;
+	padding: 0 0.14em;
+}
+body.started #container[layout="6"] span {
+	background-color: black;
+	color: white;
+	padding: 0;
+	margin: 0 calc(var(--fs) * 1.5);
+}
+body.started #container[layout="6"][borders]:not([borders="0"]) font {
+	margin: 0 auto;
+}
+body.started #container[layout="7"] p {
+	text-align: left;
+}
+body.started #container[layout="8"] p {
+	text-align: right;
+	padding-right: 0;
+	padding-left: calc(var(--fs) * 2);
+}
+body.started #container[layout="9"] {
+	align-items: flex-end;
+}
+body.started #container[layout="10"] {
+	justify-items: right;
+	align-items: flex-end;
+}
+body.started #container[layout="11"] {
+	display: inline-block;
+	text-align: right;
+}
+body.started #container[layout="11"] p {
+	display: inline-block;
+}
+body.started #container[layout="12"] {
+	display: inline-block;
+	text-align: right;
+}
+body.started #container[layout="12"] p {
+	display: inline-block;
+	vertical-align: middle;
+}
+body.started #container[layout="13"] {
+	display: inline-block;
+	text-align: right;
+}
+body.started #container[layout="13"] p {
+	display: inline-block;
+	vertical-align: top;
+}
+body.started #container[layout="14"] {
+	justify-content: space-between;
+}
+body.started #container[layout="15"] {
+	justify-content: space-evenly;
+}
+body.started #container[layout="16"] {
+	grid-template-columns: repeat(16,1fr);
+}
+body.started #container[layout="17"] {
+	grid-template-columns: repeat(4,1fr);
+}
+body.started #container[layout="18"] {
+	grid-template-columns: repeat(6,1fr);
+}
+body.started #container[layout="19"] {
+	grid-template-columns: repeat(8,1fr);
+}
+body.started #container[layout="20"] {
+	grid-template-columns: repeat(12,1fr);
+}
+body.started #container[layout="21"] {
+	vertical-align: bottom;
+}
+body.started #container[layout="21"] p {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+body.started #container[layout="22"] {
+	vertical-align: bottom;
+	text-align: right;
+}
+body.started #container[layout="23"] {
+	vertical-align: top;
+	text-align: right;
+}
+body.started #container[layout="24"] {
+	vertical-align: middle;
+}
+body.started #container[layout="24"] p {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+body.started #container[layout="25"] {
+	vertical-align: middle;
+	text-align: center;
+}
+body.started #container[layout="26"] {
+	display: grid;
+	height: 100%;
+	justify-items: end;
+	align-items: start;
+}
+body.started #container[layout="26"] p {
+	width: 60%;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	text-align: right;
+}
+body.started #container[layout="27"] {
+	display: grid;
+	height: 100%;
+	align-items: start;
+}
+body.started #container[layout="27"] p {
+	width: 60%;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	text-align: left;
+}
+body.started #container[layout="28"] span {
+	width: 30vw;
+}
+body.started #container[layout="29"] p {
+	width: 30%;
+	margin: 0 auto;
+}
+@media (max-aspect-ratio: 1/1) {
+	body.started #container[layout="29"] p {
+		width: 75%;
+	}
+}
+body.started #container[layout="30"] p {
+	width: 50vw;
+	margin: 0 auto;
+}
+body.started #container[borders="1"] [word] {
+	margin: 0 0.14em;
+}
+body.started #container[borders="1"] font {
+	border: 0.02em solid black;
+	margin-right: -0.02em;
+	margin-top: -0.02em;
+	padding: 0 0.04em 0.14em;
+}
+body.started #container[borders="2"] [word] {
+	margin: 0 0.14em;
+}
+body.started #container[borders="2"] font {
+	border: 0.05em solid black;
+	margin-right: -0.05em;
+	margin-top: -0.05em;
+	padding: 0 0.04em 0.14em;
+}
+body.started #container[borders="3"] [word] {
+	margin: 0 0.14em;
+}
+body.started #container[borders="3"] font {
+	border: 0.1em solid black;
+	margin-right: -0.1em;
+	margin-top: -0.1em;
+	padding: 0 0.04em 0.14em;
+}
+body.started #container[borders="4"] [word] {
+	margin: 0 0.14em;
+}
+body.started #container[borders="4"] font {
+	border-right: 0.1em solid blue;
+}
+[glitch="1"] {
+	background-color: #ccc !important;
+	color: black !important;
+}
+[glitch="2"] {
+	background-color: black !important;
+	color: white !important;
+}
+[glitch="3"] {
+	color: black !important;
+}
+[glitch="4"] {
+	background-color: blue !important;
+	color: white !important;
+}
+[glitch="5"] {
+	font-family: "Wingdings", serif;
+}
+[decor="1"] {
+	text-transform: uppercase;
+}
+[decor="2"] {
+	text-decoration: underline;
+}
+[decor="3"] {
+	font-family: "Wingdings", serif;
+}
+[decor="4"] {
+	font-style: italic;
+}
+[decor="5"] {
+	letter-spacing: 0.2em;
+	padding-left: 0.2em !important;
+}
+[decor="6"] {
+	color: white !important;
+}
+[decor="7"] {
+	background-color: white !important;
+}
+[decor="8"] {
+	padding: 0.5em !important;
+}
+[decor="9"] {
+	padding-left: 0.5em !important;
+	padding-right: 0.5em !important;
+}
+[decor="10"] {
+	padding-top: 0.5em !important;
+	padding-bottom: 0.5em !important;
+}
