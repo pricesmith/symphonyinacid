@@ -1,0 +1,116 @@
+
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="pl" dir="ltr" lang="pl" />
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Symphony in Acid | Max Cooper, Ksawery Komputery</title>
+    <meta charset="UTF-8">
+    <meta content="en" http-equiv="Content-Language" />
+    <meta name="robots" content="index,follow,all" />
+    <meta name="distribution" content="global" />
+    <meta name="google" content="notranslate">
+    
+    <meta name="author" content="Max Cooper, Ksawery Komputery" />
+    <meta name="description" content="Interactive website promoting a track Symphony in Acid. Music: Max Cooper, Animation/code: Ksawery Komputery." />
+
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://symphonyinacid.net/assets/ogimage.png"> 
+    <meta property="og:site_name" content="Symphony in Acid">
+    <meta property="og:description" content="Interactive website promoting a track Symphony in Acid. Music: Max Cooper, Animation/code: Ksawery Komputery." />
+    <meta property="og:url" content="https://symphonyinacid.net">
+    <link rel="shortcut icon" href="/assets/favicon.png"/>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+
+    <link href="/style/common.css" type="text/css" rel="stylesheet">
+    <link href="/style/ui.css" type="text/css" rel="stylesheet">
+    <link href="/style/story.css" type="text/css" rel="stylesheet">
+    <!-- <link href="/style/ui.less" type="text/css" rel="stylesheet/less"> -->
+    <!-- <link href="/style/story.less" type="text/css" rel="stylesheet/less"> -->
+
+    <script src="/libs/p5.min.js"></script>
+    <script src="/libs/jquery.min.js"></script>
+    <!-- <script src="/libs/less.min.js"></script> -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XW86RFJX9G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XW86RFJX9G');
+    </script>
+
+  </head>
+  <body>
+
+    <div id="intro">
+      <p><span word><font>Symphony</font></span><span word><font>in</font></span><span word><font>Acid</font></span></p>
+      <p><span word><font><a href="https://maxcooper.net" target="_blank">Max Cooper</a></font></span></p>
+    </div>
+
+    <div id="about">
+      <p>This is an interactive website promoting a track <a href="https://ffm.to/unspokenwords_" target="_blank">Symphony in Acid</a> from the album <a href="https://unspokenwords.net" target="_blank">Unspoken Words</a> by <a href="https://maxcooper.net" target="_blank">Max Cooper</a>. Animation and code done by <a href="https://ksawerykomputery.pl" target="_blank">Ksawery Komputery</a>.</p>
+      <p>The official video (<a href="https://vimeo.com/ksawerykomputery/symphony-in-acid" target="blank">Vimeo</a>) features text from <a href="https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus" target="_blank">Tractatus Logico-Philosophicus</a> (1921) by <a href="https://en.wikipedia.org/wiki/Ludwig_Wittgenstein" target="_blank">Ludwig Wittgenstein</a>, dealing with limits of language.</p>
+      <p>This website is coded entirely in HTML and JavaScript. Press <span class="key">F</span> to enter fullscreen mode or <span class="key">space</span> to pause/play. The content reacts to your mouse and keys <span class="key">Q</span> <span class="key">W</span> <span class="key">E</span> <span class="key">R</span> <span class="key">T</span>.</p>
+      <p>More about the project: <a href="https://ksawerykomputery.pl/works/symphony-in-acid">www.ksawerykomputery.pl</a>.</p>
+      <button id="close-about">Close</button>
+    </div>
+
+    <nav>
+      <div class="item play">
+        <button id="play">Play</button>
+        <a href="/"><button id="replay">Replay</button></a>
+      </div>
+      <div class="item"><a href="/selfie" target="_blank"><button>Selfie</button></a></div>
+      <div class="item"><a href="https://objkt.com/collection/KT1UpYT76tva7R2oCmusn3HgJsAQFTLi1THH" target="_blank"><button>NFT</button></a></div>
+      <div class="item"><button id="show-about">About</button></div>
+    </nav>
+
+    <div id="p5_loading"></div>
+
+    <div id="audio" style="display: none">
+      <audio controls preload="auto" playsinline>
+        <source src="/assets/audio/symphonyinacid.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div id="progress"><span></span></div>
+
+    <div id="media" style="display: none">
+      <video autoplay loop muted preload="auto" playsinline>
+        <source src="/assets/video/0.webm" type="video/webm">
+        <source src="/assets/video/0.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted preload="auto" playsinline>
+        <source src="/assets/video/1.webm" type="video/webm">
+        <source src="/assets/video/1.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted preload="auto" playsinline>
+        <source src="/assets/video/2.webm" type="video/webm">
+        <source src="/assets/video/2.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted preload="auto" playsinline>
+        <source src="/assets/video/3.webm" type="video/webm">
+        <source src="/assets/video/3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <main>
+      <div id="container" scene="1" borders="0">
+        <p><span word><font>The</font></span><span word><font>limits</font></span><span word><font>of</font></span><span word><font>my</font></span><span word><font>language</font></span><span class="hidden"><font>DO</font></span><span class="hidden"><font>NOT</font></span><br><span word><font>mean</font></span><span word><font>the</font></span><span word><font>limits</font></span><span word><font>of</font></span><span word><font>my</font></span><span word><font>world.</font></span></p>
+        <p class="name"><span><font><a href="https://en.wikipedia.org/wiki/Ludwig_Wittgenstein" target="_blank">Ludwig Wittgenstein</a></font></span></p>
+      </div>
+    </main>
+
+    <script src="/scripts/functions.js"></script>
+    <script src="/scripts/ui.js"></script>
+    <script src="/scripts/palette.js"></script>
+    <script src="/scripts/text.js"></script>
+    <script src="/scripts/media.js"></script>    
+    <script src="/scripts/keyboard.js"></script>
+    <script src="/scripts/stems.js"></script>
+    <script src="/scripts/react.js"></script>
+    <script src="/scripts/sketch.js"></script>
+    
+  </body>
+</html>
